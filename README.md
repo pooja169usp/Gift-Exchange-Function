@@ -19,3 +19,7 @@ Ardi gives a gift to Beth
 Susan gives a gift to Abe
 Quan gives a gift to Ardi
 Beth gives a gift to Susan
+
+## Solution:
+
+You can find the solution for this here [a link](https://github.com/user/repo/blob/branch/other_file.md)
