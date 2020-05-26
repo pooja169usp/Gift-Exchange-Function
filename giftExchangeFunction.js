@@ -31,8 +31,8 @@ function giftExchange(arr) {
 
     let numOfDuplicates = lowerCaseList.length - uniqueList.length;
     if(numOfDuplicates > 0) {
-       console.log(```${ numOfDuplicates } duplicate name/s were found. You might consider
-        entering their surnames instead to differentiate.```); 
+       console.log(`${ numOfDuplicates } duplicate name/s were found. You might consider 
+       entering their surnames instead to differentiate.`); 
     }
 
     // To randomly shuffle the people in the list so we do not get same pairs every time
