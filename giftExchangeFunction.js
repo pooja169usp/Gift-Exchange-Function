@@ -44,16 +44,11 @@ function giftExchange(arr) {
         console.log(`There should be at least 3 people in the list to satisfy the gift exchange rules`);
     }
     else {
-        shuffledArray.forEach((person, i) => {
-            if(i === (numOfPeople - 1)) {
-                console.log(person.capitalize() + " gives a gift to " + shuffledArray[0].capitalize());
-            }
-            else {
-                console.log(person.capitalize() + " gives a gift to " + shuffledArray[i+1].capitalize());
-            }
-        });
+        for(let i = 1; i < numOfPeople; i++) {
+            console.log(shuffledArray[i - 1].capitalize() + " gives a gift to " + shuffledArray[i].capitalize());
+        }
+        console.log(shuffledArray[numOfPeople - 1].capitalize() + " gives a gift to " + shuffledArray[0].capitalize());
     }
 }
 
-// Sample Input to call the gitftExchange function
 giftExchange(['Susan', 'Beth', 'Abe', 'Ardi', 'Quan', 'susan', 1]);
