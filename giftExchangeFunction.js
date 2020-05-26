@@ -1,10 +1,12 @@
 // Instructions:
 
-// You are tasked with organizing a gift exchange among friends; every member of the group has to both give, and receive, a gift from among the others.
+// You are tasked with organizing a gift exchange among friends; every member of the group has 
+// to both give, and receive, a gift from among the others.
  
 // The only rule is that one can not receive a gift from the same person to whom they give a gift.
  
-// Write a solution for the above requirements for groups of varying sizes using Javascript. Remember to account for edge cases that would make the above rules impossible to follow.
+// Write a solution for the above requirements for groups of varying sizes using Javascript. 
+// Remember to account for edge cases that would make the above rules impossible to follow.
 
 // example input:
 // ['Susan', 'Beth', 'Abe', 'Ardi', 'Quan']
@@ -27,35 +29,40 @@ function shuffleInput(arr) {
     return arr;
 }
 
+// This helper function will capitalize the string input
 String.prototype.capitalize = function() {
   return this.charAt(0).toUpperCase() + this.slice(1)
 }
 
 function giftExchange(arr) {
-    // filter any item in the list which is not of string type and convert the string to lowercase to eliminate duplicates fro eg: ['Susan', 'Beth', 'Abe', 'Ardi', 'Quan', 'susan', 1]
+    // Filter any item in the list which is not of string type and convert the string to lowercase to 
+    // eliminate duplicates fro eg: ['Susan', 'Beth', 'Abe', 'Ardi', 'Quan', 'susan', 1]
     let lowerCaseList = arr.filter((item) => typeof(item) === 'string').map((item) => {
         if(typeof(item) === 'string') {
             return item.toLowerCase();
         }
     });
 
-    let uniqueList = [...new Set(lowerCaseList)]; // To make sure the names in the list are unique as a person cannot gift himself/herself
+    // To make sure the names in the list are unique as a person cannot gift himself/herself
+    let uniqueList = [...new Set(lowerCaseList)]; 
     let numOfInvalidInputType = arr.length - lowerCaseList.length;
     if(numOfInvalidInputType > 0) {
-       console.log(numOfInvalidInputType + " invalid input found"); 
+       console.log(`${ numOfInvalidInputType } invalid input found`); 
     }
 
     let numOfDuplicates = lowerCaseList.length - uniqueList.length;
     if(numOfDuplicates > 0) {
-       console.log(numOfDuplicates + " duplicate name/s were found. You might consider entering their surnames instead to differentiate."); 
+       console.log(```${ numOfDuplicates } duplicate name/s were found. You might consider
+        entering their surnames instead to differentiate.```); 
     }
-    
-    let shuffledArray = shuffleInput(uniqueList); // To randomly shuffle the people in the list so we do not get same pairs every time
+
+    // To randomly shuffle the people in the list so we do not get same pairs every time
+    let shuffledArray = shuffleInput(uniqueList); 
 
     let numOfPeople = shuffledArray.length;
 
     if(numOfPeople < 3) {
-        console.log("There should be at least 3 people in the list to satisfy the gift exchange rules");
+        console.log(`There should be at least 3 people in the list to satisfy the gift exchange rules`);
     }
     else {
         shuffledArray.forEach((person, i) => {
