@@ -55,4 +55,5 @@ function giftExchange(arr) {
     }
 }
 
+// Sample Input to call the gitftExchange function
 giftExchange(['Susan', 'Beth', 'Abe', 'Ardi', 'Quan', 'susan', 1]);
